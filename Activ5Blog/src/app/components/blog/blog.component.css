@@ -1,0 +1,134 @@
+.wrapper {
+  padding: 25px 50px;
+  display: flex;
+  gap: 20px;
+  max-width: 1440px;
+  margin: auto;
+  flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  .wrapper {
+    flex-direction: row;
+  }
+}
+
+.cargarNews {
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  height: 570px;
+  border-radius: 5px;
+  background-color: rgb(202, 225, 237);
+  padding: 10px;
+}
+
+.pintarNews {
+  border-radius: 5px;
+  width: 60%;
+  max-height: 570px;
+  overflow-y: auto;
+  background-color: rgb(202, 225, 237);
+  padding: 10px;
+}
+
+.tituloAncho,
+.imagenAncho,
+.nombreAncho,
+.paisAncho {
+  width: 60%;
+  background-color: antiquewhite;
+}
+.ingrTx,
+.fechaAncho {
+  background-color: antiquewhite;
+}
+
+.ingrTx {
+  display: flex;
+}
+
+.boton {
+  width: 84px;
+  height: 36px;
+  background-color: rgb(84, 76, 156);
+  border-radius: 5px;
+  color: white;
+}
+
+.divBoton {
+  display: flex;
+  align-items: center;
+}
+
+.par {
+  background-color: rgb(190, 211, 228);
+  margin-left: 5px;
+  margin-right: 16px;
+  border-radius: 5px;
+}
+.impar {
+  background-color: rgb(128, 170, 218);
+  margin-left: 5px;
+  margin-right: 16px;
+  border-radius: 5px;
+}
+
+.pintaContenido {
+  width: 60%;
+  overflow: auto;
+  word-wrap: break-word;
+}
+.pintaImagen {
+  width: 40%;
+}
+
+.cajaContenidoImagen {
+  padding: 25px 50px;
+  display: flex;
+  gap: 50px;
+  max-width: 860px;
+  margin: auto;
+}
+
+.query {
+  display: flex;
+  flex-direction: column; /* Opcional: si deseas que el textarea se expanda verticalmente */
+}
+@media (max-width: 800px) {
+  .query {
+    flex-direction: row; /* Cambia la dirección de la flexbox a horizontal */
+  }
+}
+
+textarea {
+  flex: 1;
+  resize: none;
+  max-width: 100%;
+}
+
+.texto,
+.query,
+.boton,
+.pintaContenido {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+.primer {
+  background-color: rgb(84, 76, 156);
+  margin-top: 8px;
+  text-align: center;
+  color: white;
+}
+
+article {
+  margin-top: 10px;
+}
+
+.elspan {
+  color: rgb(84, 76, 156);
+
+  font-size: 15px;
+  font-weight: bold;
+}

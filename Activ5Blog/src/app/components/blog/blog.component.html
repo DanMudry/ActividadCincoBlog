@@ -1,0 +1,113 @@
+<main class="wrapper">
+  <section class="cargarNews" id="laCarga">
+    <div class="primer">
+      <span class="texto">Dejanos tu experiencia</span>
+    </div>
+    <br />
+    <div class="query">
+      <input
+        type="text"
+        class="tituloAncho"
+        id="tituloInput"
+        placeholder="Coloca solo el nombre de la playa"
+        [(ngModel)]="newPost.titulo"
+      />
+    </div>
+    <br />
+
+    <div class="query">
+      <input
+        type="text"
+        class="paisAncho"
+        id="paisInput"
+        placeholder="Pais ..."
+        [(ngModel)]="newPost.pais"
+      />
+    </div>
+    <br />
+
+    <div class="query">
+      <input
+        type="text"
+        class="imagenAncho"
+        id="imagenInput"
+        placeholder="Ingresa la url de una imagen"
+        [(ngModel)]="newPost.imagen"
+      />
+    </div>
+    <br />
+    <label class="texto" for="contenidoInput"
+      >Ingresa tu experiencia en esa playa</label
+    >
+    <div class="query">
+      <textarea
+        class="ingrTx"
+        maxlength="432"
+        name="elContenido"
+        id="contenidoInput"
+        cols="72"
+        rows="6"
+        [(ngModel)]="newPost.contenido"
+      ></textarea>
+    </div>
+
+    <br />
+
+    <label class="texto" for="fechaInput"
+      >En que fecha estuviste surfeando "bro"
+    </label>
+    <input
+      type="date"
+      class="fechaAncho"
+      id="fechaInput"
+      placeholder=""
+      [(ngModel)]="newPost.fecha"
+    />
+
+    <br />
+    <br />
+    <div class="query">
+      <input
+        type="text"
+        class="nombreAncho"
+        id="nombreInput"
+        placeholder="Como te llamas "
+        [(ngModel)]="newPost.nombre"
+      />
+    </div>
+    <br />
+    <button class="boton" (click)="validar()">Guardar</button>
+    @if(!todoCargado){
+    <br />
+    <span class="texto" style="color: red">Hay campos sin rellenar</span>
+
+    }
+  </section>
+  <section class="pintarNews" id="laMuestro">
+    <div>
+      <p class="primer">
+        <span class="texto"
+          >Tenemos {{ noticias.length }} posts para que veas</span
+        >
+      </p>
+    </div>
+    @for(array of noticias;track array.id;let par=$even;let impar=$odd){
+    <article [class.par]="par" [class.impar]="impar">
+      <p class="texto">
+        <span class="elspan">Playa</span> {{ array.titulo }}
+        <span class="elspan">- País </span>{{ array.pais }}
+        <span class="elspan">- Fecha</span>
+        {{ array.fecha | date : "dd/MM/yyyy" }}
+        <span class="elspan"> - Autor Publicación</span>
+        {{ array.nombre }}
+      </p>
+      <div class="cajaContenidoImagen">
+        <section class="pintaContenido">{{ array.contenido }}</section>
+        <section class="pintaImagen">
+          <img src="https://placehold.co/100x100" alt="{{ array.titulo }}" />
+        </section>
+      </div>
+    </article>
+    }
+  </section>
+</main>

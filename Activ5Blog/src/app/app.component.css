@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  .wrapper {
+    flex-direction: row;
+  }
+}
+
+header,
+footer {
+  background-color: rgb(84, 76, 156);
+  padding: 5px;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+main {
+  background-color: lightgrey;
+}
+
+.tituloH {
+  margin-left: 93px;
+  color: antiquewhite;
+  font-size: 30px;
+  font-style: bold;
+}
