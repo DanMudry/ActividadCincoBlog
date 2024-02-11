@@ -62,25 +62,26 @@
 }
 
 .par {
-  background-color: rgb(190, 211, 228);
+  background-color: rgb(208, 194, 170);
   margin-left: 5px;
   margin-right: 16px;
   border-radius: 5px;
 }
 .impar {
-  background-color: rgb(128, 170, 218);
+  background-color: rgb(159, 136, 83);
   margin-left: 5px;
   margin-right: 16px;
   border-radius: 5px;
 }
 
 .pintaContenido {
-  width: 60%;
+  width: 100%;
   overflow: auto;
   word-wrap: break-word;
 }
 .pintaImagen {
   width: 40%;
+  display: flex;
 }
 
 .cajaContenidoImagen {
@@ -93,11 +94,12 @@
 
 .query {
   display: flex;
-  flex-direction: column; /* Opcional: si deseas que el textarea se expanda verticalmente */
+  flex-direction: column;
 }
+
 @media (max-width: 800px) {
   .query {
-    flex-direction: row; /* Cambia la dirección de la flexbox a horizontal */
+    flex-direction: row;
   }
 }
 
@@ -131,4 +133,22 @@ article {
 
   font-size: 15px;
   font-weight: bold;
+}
+
+.par,
+.impar {
+  border: solid 1px black;
+  justify-content: center;
+  justify-items: center;
+
+  height: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.mostrarCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
 }
