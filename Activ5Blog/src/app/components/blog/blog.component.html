@@ -42,7 +42,7 @@
     <div class="query">
       <textarea
         class="ingrTx"
-        maxlength="432"
+        maxlength="300"
         name="elContenido"
         id="contenidoInput"
         cols="72"
@@ -89,10 +89,32 @@
         <span class="texto"
           >Tenemos {{ noticias.length }} posts para que veas</span
         >
+        >
       </p>
     </div>
-    @for(array of noticias;track array.id;let par=$even;let impar=$odd){
-    <article [class.par]="par" [class.impar]="impar">
+    <div class="mostrarCards">
+      @for(array of noticias;track array.id;let par=$even;let impar=$odd){
+
+      <div [class.par]="par" [class.impar]="impar">
+        <div class="pintaImagen">
+          <img src="https://placehold.co/100x100" />
+        </div>
+        <p class="texto">
+          <span class="elspan">Post </span> {{ array.id }}
+          <span class="elspan">- Playa</span> {{ array.titulo }}
+          <span class="elspan">- País </span>{{ array.pais }}
+          <br />
+          <span class="elspan"> Fecha</span>
+          {{ array.fecha | date : "dd/MM/yyyy" }}
+          <br />
+          <span class="elspan"> Autor Publicación</span>
+          {{ array.nombre }}
+        </p>
+        <div class="cajaContenidoImagen">
+          <section class="pintaContenido">{{ array.contenido }}</section>
+        </div>
+      </div>
+      <!--<article [class.par]="par" [class.impar]="impar">
       <p class="texto">
         <span class="elspan">Playa</span> {{ array.titulo }}
         <span class="elspan">- País </span>{{ array.pais }}
@@ -107,7 +129,9 @@
           <img src="https://placehold.co/100x100" alt="{{ array.titulo }}" />
         </section>
       </div>
-    </article>
-    }
+    </article>-->
+
+      }
+    </div>
   </section>
 </main>

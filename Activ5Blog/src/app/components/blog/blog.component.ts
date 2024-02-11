@@ -39,7 +39,7 @@ export class BlogComponent {
       this.newPost.fecha &&
       this.newPost.nombre != ''
     ) {
-      this.newPost.id = this.noticias.length;
+      this.newPost.id = this.noticias.length + 1;
       this.noticias.push(this.newPost);
       this.todoCargado = true;
       this.pushRealizado = true;
