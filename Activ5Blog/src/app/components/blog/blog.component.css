@@ -98,7 +98,9 @@
 }
 
 @media (max-width: 800px) {
-  .query {
+  .query,
+  .par,
+  .impar {
     flex-direction: row;
   }
 }
