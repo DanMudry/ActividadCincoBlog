@@ -11,7 +11,6 @@ import { NewNoticia } from '../../interfaces/Inewnoticia.interface';
   styleUrl: './blog.component.css',
 })
 export class BlogComponent {
-  // arrNoticias: any[] = [];
   @Input() noticias: NewNoticia[] = [];
 
   ngOnInit(): void {}
@@ -30,7 +29,6 @@ export class BlogComponent {
   };
 
   validar() {
-    console.log(this.noticias + 'asi esta la fecha ' + this.newPost.fecha);
     if (
       this.newPost.titulo &&
       this.newPost.pais &&
@@ -43,8 +41,7 @@ export class BlogComponent {
       this.noticias.push(this.newPost);
       this.todoCargado = true;
       this.pushRealizado = true;
-      console.log(this.noticias);
-      console.log(this.todoCargado);
+
       this.newPost = {
         id: 0,
         titulo: '',
