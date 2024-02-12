@@ -4,24 +4,17 @@ import { BlogComponent } from './components/blog/blog.component';
 import { NewNoticia } from './interfaces/Inewnoticia.interface';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { BuscapaisComponent } from './components/buscapais/buscapais.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    BlogComponent,
-    FormsModule,
-    CommonModule,
-    BuscapaisComponent,
-  ],
+  imports: [RouterOutlet, BlogComponent, FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'Actividad 5 con Agregados';
-  buscaPais: string = '';
+
   arrNoticias: NewNoticia[] = [
     {
       id: 1,
